@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
     char ch;
-    cout<<"enter the character ";
+    cout<<"enter the character please ";
     cin>>ch;
     if(ch>='a' && ch<='z'){
         cout<<"small case"<<endl;
