@@ -13,7 +13,7 @@ int main(){
     }
     int min,max;
     min=max=array[0];
-    for(int i=1;i<n;i++){
+    for(int i=0;i<n;i++){
         if(array[i]>max){
             max=array[i];
         }
@@ -25,7 +25,4 @@ int main(){
     printf("\n");
     printf("max=%d and min=%d\nsum=%d\n",max,min,sum);
     return 0;
-    
-
-
 }

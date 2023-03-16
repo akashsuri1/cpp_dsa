@@ -3,30 +3,29 @@ using namespace std;
 int main(){
     int n;
     cin>>n;
-    
+
     int row=1;
     while(row<=n){
-        // first numbers
+        // space print
+        int spaces=n-row;
+        while(spaces){
+            cout<<" ";
+            spaces=spaces-1;
+        }
+        // first trangle;
         int col=1;
-        while(col<=n-row+1){
+        while(col<=row){
             cout<<col;
             col=col+1;
         }
-        // stars print
-        int stars=2*row-2;
-        while(stars){
-            cout<<"*";
-            stars=stars-1;
-        }
-        //numbers
-        int start=n-row+1;
+        // second traingle
+        int start=row-1;
         while(start){
             cout<<start;
             start=start-1;
         }
         cout<<endl;
         row=row+1;
-
 
     }
 }

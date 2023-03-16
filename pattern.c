@@ -1,15 +1,11 @@
 #include<stdio.h>
+#include<conio.h>
 int main(){
-    int n;
-    scanf("%d",&n);
-    for(int j=1;j<=n;j++){
-        int count=j;
-        for(int k=1;k<=n;k++){
-           printf("%d ",count);
-           count+=j;
-        }
-        printf("\n");
-
-    }
-    return 0;
+    char arr[200];
+    char k;
+    scanf("%c",&k);
+    getchar();
+    fgets(arr,200,stdin);
+    printf("%c \n%s\n",k,arr);
+    
 }
