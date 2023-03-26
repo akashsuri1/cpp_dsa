@@ -1,13 +1,14 @@
 #include<stdio.h>
 int main(){
     int n;
+    printf("enter the n :");
     scanf("%d",&n);
     int array[n];
     for(int i=0;i<n;i++){
         scanf("%d",&array[i]);
     }
-    int max=arr[0];
-    int min=arr[0];
+    int max=array[0];
+    int min=array[0];
     for(int i=0;i<n;i++){
        if(array[i]>max){
            max=array[i];
@@ -41,8 +42,7 @@ int main(){
         array[j+1]=temp;
         counter++;
     }
-    printf("%d\n",counter);
-    
+    printf("%d is the counter\n",counter);
+    printf("it was an easy question\n");
     return 0;
-
 }

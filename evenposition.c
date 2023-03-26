@@ -16,5 +16,5 @@ void evenelementsum(int *ptr,int size){
     for(int j=0;j<size;j+=2){
         sum+= *(ptr+j);
     }
-    printf("the sum is %d\n",sum);
+    printf("the sum is given as%d\n",sum);
 }
