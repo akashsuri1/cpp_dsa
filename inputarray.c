@@ -43,5 +43,6 @@ int main(){
         counter++;
     }
     printf("%d is the counter\n",counter);
+    printf("it was an easy question\n");
     return 0;
 }

@@ -8,6 +8,6 @@ int main(){
     }else{
         cout<<"stage 2 inside else"<<endl;
     }
-    cout<<a<<" "<<b<<endl;
+    cout<"final values"<a<<" "<<b<<endl;
     return 0;
 }
