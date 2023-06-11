@@ -19,6 +19,7 @@ int main(){
      hello();
     hello1:: hello();
     cout<<"namaste duniya"<<endl;
+    cout<<"this is my first c++ code"<<endl;
     cout<<"i am here to give my 100% and prove everyone wrong\n";
     //this is the functionality provided by c++ to print 
     //endl is mapped with enter the same for /n while the ; used as statment terminator
