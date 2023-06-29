@@ -1,5 +1,5 @@
 #include<iostream>
-#include"sword.cpp" //so this way we have included an external class 
+#include"oops1_2.cpp" //so this way we have included an external class 
 using namespace std;
 //this way we can define classes explicitly in our code
 class Hero{
