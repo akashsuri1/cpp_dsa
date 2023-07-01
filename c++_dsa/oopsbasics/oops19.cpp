@@ -19,15 +19,17 @@ class Hero{
             this->health=health;
             this->level=level;
         }
+        Hero(char name[],int health,char level){
+            this->Name=new char[100];
+            strcpy(this->Name,name);
+            this->health=health;
+            this->level=level;
+        }
         Hero(Hero &temp){
             cout<<"copy constructor called"<<endl;
-            //we are creating an new array in this case which has length equal to that of copied object
             char *ch=new char[strlen(temp.Name)+1];
-            //so here we have copied the value of temp name hence an new array is created with different base address
             strcpy(ch,temp.Name);
             this->Name=ch;
-            //and in name of array an new base address is stored
-            //this is deep copy in this case
             this->health=temp.gethealth();
             this->level=temp.getlevel();
         }
@@ -55,18 +57,26 @@ class Hero{
         }
 };
 int main(){
-      Hero h1;
-      h1.sethealth(90);
-      h1.setlevel('c');
-      char name[]="Babbar";
-      h1.setName(name);
-      h1.print();
-      Hero h2(h1);
-      h2.print();
-      h1.Name[0]='G';
+      char name[100];
+      cin.getline(name,7);
+      Hero h1(name,90,'c');
+      cin.getline(name,7);
+      Hero h2(name,40,'A');
       h1.print();
       h2.print();
+      h1=h2;
+      /*so this is same as 
+      h1.name=h2.Name
+      h1.health=h2.health
+      h1.level=h2.level
+      this means we are copying the value of one object properties into the pther one but this is alos an shallow copy*/
+      h1.print();
+      h2.print();
+      char name2[100];
+      cin.getline(name2,100);
+      strcpy(h1.Name,name2);
+      h1.print();
+      h2.print();
+      //this alll validates the fact of shallow copy
       return 0;
-      //so in this case the copy construtcor that is called does not copy the same address in the pointer but just a new array is created it new address is is passed so in this case any change in one will not affect the other object as it is copy and has different address
-      //so this is what is called as deep copy 
 }

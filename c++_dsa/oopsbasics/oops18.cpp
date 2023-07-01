@@ -67,6 +67,6 @@ int main(){
       h1.print();
       h2.print();
       return 0;
-      //so in this case the copy construtcor that is called does not copy the same address in the pointer but just a new array is created it new address is is passed so in this case any change in one will n ot affect the other object as it is copy and has different address
+      //so in this case the copy construtcor that is called does not copy the same address in the pointer but just a new array is created it new address is is passed so in this case any change in one will not affect the other object as it is copy and has different address
       //so this is what is called as deep copy 
 }
