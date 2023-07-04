@@ -30,4 +30,5 @@ int main(){
     return 0;
     //here this is an herichal inheritance where one class serves as base class for more than one derived class
     //this furthe turn into an full tree of herichal inheritance here the a class serves as parent class for the b class and the c class 
+    //when more than one type of inheritance are moxed then the resultant model of inheritance is the hybrid inheritance 
 }
