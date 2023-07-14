@@ -42,6 +42,6 @@ int main(){
 }
 //$ this is amazing way to make new commets more colerful and more exciting 
 /*
- ? we could have done this through linear search by finding the peak or maximum elment that would have O(n) complexity
- $But doing it through binary search decrease complexity to O(logn) thus this way we have an efficent and better solution   
+ ? 1.)we could have done this through linear search by finding the peak or maximum elment that would have O(n) complexity
+ $ 2.)But doing it through binary search decrease complexity to O(logn) thus this way we have an efficent and better solution   
 */
