@@ -4,16 +4,16 @@ int Peakindex(int array[],int n){
     int start=0;
     int end=n-1;
     int mid=start+(end-start)/2;
-    //$ the last time the start is less than end then this loops run changing the start to desired value at that moment we should terminate beacuse after that the start equal to end which is the required index 
+    //* the last time the start is less than end then this loops run changing the start to desired value at that moment we should terminate beacuse after that the start equal to end which is the required index 
     //* on the left side of peak arr[i]<arr[i+1]
     //? on the right side of peak arr[i]>arr[i+1]
-    //! at peak arr[i]<arr[i+1]>arr[i+2] at "peak" the elemnt
+    //? at peak arr[i]<arr[i+1]>arr[i+2] at "peak" the elemnt
     while(start<end){
         //?if this is case then the mid lies on the left side of the peak
         if(array[mid]<array[mid+1]){
             start=mid+1;
         }else{
-            //!in this case the mid can be on peak or on its right side we cannot afford to change it to mid-1 because it can cause problem if it is peak itself   
+            //$in this case the mid can be on peak or on its right side we cannot afford to change it to mid-1 because it can cause problem if it is peak itself   
             end=mid;
         }
         mid=start+(end-start)/2;
