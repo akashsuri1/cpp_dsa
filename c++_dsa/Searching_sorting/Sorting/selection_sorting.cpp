@@ -32,3 +32,4 @@ int main(){
     print(array,n);
     return 0;
 }
+//$ it han an complexity of o(n^2) both in worst case and best case
