@@ -17,5 +17,29 @@ int main(){
     print_array(arr2);
     print_array(arr3);
     print_array(global);
+    array<int,6> arr5;
+    arr5.fill(49);
+    for(auto it=arr5.begin();it!=arr5.end();it++){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+    for(auto it=arr5.rbegin();it<arr5.rend();it++){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+    for(auto it=arr5.end()-1;it>=arr5.begin();it--){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+    //for each loop
+    for( auto it:arr5){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    string str="IamLuckyandLiked";
+    for(auto c:str){
+        cout<<c<<" ";
+    }
+    cout<<endl;
     return 0;
 }
