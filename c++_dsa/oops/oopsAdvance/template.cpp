@@ -6,6 +6,7 @@ class vector{
         T* arr;
         int size;
     public:
+    
         vector(int m){
             size=m;
             arr=new T[size];
