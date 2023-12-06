@@ -14,17 +14,16 @@ int main(){
   cin>>t;
   vector<int> vec(t,0);
   for(int i=0;i<t;i++) cin>>vec[i];
-  set<int> ans;
-  int maxed=0;
+  int count=1;
+  int ans=0;
   for(int i=0;i<t;i++){
-    if(ans.find(vec[i])!=ans.end()){
-      ans.erase(vec[i]);
+    if(!isfound(vec,i)){
+      count++;
     }else{
-      ans.insert(vec[i]);
+      count--;
     }
-    int temp=ans.size();
-    maxed=max(maxed,temp);
+    ans=max(count,ans);
   }
-  cout<<maxed<<endl;
+  cout<<ans<<endl;
   return 0;
 }
