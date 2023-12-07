@@ -1,30 +1,26 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
-bool isfound(vector<int> t,int index){
-  for(int i=index-1;i>=0;i--){
-    if(t[i]==t[index]){
-      return true;
-
+void print(vector<int> ans){
+    for(auto i:ans){
+        cout << i << " ";
     }
-   }
-    return false;
+    cout<<endl;
 }
 int main(){
-  int t;
-  cin>>t;
-  vector<int> vec(t,0);
-  for(int i=0;i<t;i++) cin>>vec[i];
-  set<int> ans;
-  int maxed=0;
-  for(int i=0;i<t;i++){
-    if(ans.find(vec[i])!=ans.end()){
-      ans.erase(vec[i]);
-    }else{
-      ans.insert(vec[i]);
-    }
-    int temp=ans.size();
-    maxed=max(maxed,temp);
-  }
-  cout<<maxed<<endl;
-  return 0;
+   int n;
+   cin>>n;
+   vector<int> vec(n);
+   for(int i=0;i<n;i++){
+    cin>>vec[i];
+   }
+   sort(vec.begin(),vec.end());
+   print(vec);
+   while(!vec.empty()){
+       vec.pop_back();
+   }
+   cout<<vec.size()<<endl;
+   cout<<vec.empty()<<endl;
+
 }
