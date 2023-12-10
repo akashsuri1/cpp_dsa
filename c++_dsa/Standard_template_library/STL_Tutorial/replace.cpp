@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    vector<int> vec(n,0);
+    for(int i=0;i<n;i++) cin>>vec[i];
+    int old_value;
+    int new_value;
+    cin>>old_value>>new_value;
+    replace(vec.begin(),vec.end(),old_value,new_value);
+    for(auto itr:vec) cout<<itr<<" ";
+    cout<<endl;
+    return 0;
+}
