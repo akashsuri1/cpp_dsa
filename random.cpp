@@ -1,39 +1,44 @@
 #include<bits/stdc++.h>
 using namespace std;
-class Solution {
-private:
-    map<char,string> ans={{'2',"abc"},{'3',"def"},{'4',"ghi"},{'5',"jkl"},{'6',"mno"},{'7',"pqrs"},{'8',"tuv"},{'9',"wxyz"}};
-    void generatecomibnation(vector<string>& ans,int index,string& output,string digits){
-        cout<<index<<digits.size()<<endl;
-        if(index==digits.size()){
-            ans.push_back(output);
-            return;
-        }
-        cout<<output<<endl;
-        string temp=ans[digits[index]];
-        cout<<"temp string"<<temp<<endl;
-        for(int i=0;i<temp.size();i++){
-            output.push_back(temp[i]);
-            generatecomibnation(ans,index+1,output,digits);
-            output.pop_back();
-        }
+int pairtion(vector<vector<int>>& arr,int low,int high,int row){
+    int pivot=arr[low/row][low%row];
+    int left=low;
+    int right=high;
+    while(left<right){
+        while(arr[left/row][left%row]<=pivot && left<high) left++;
+        while(arr[right/row][right%row]>pivot && right>low) right--;
+        if(left<right){
+            swap(arr[left/row][left%row],arr[right/row][right%row]);
+        } 
     }
-public:
-    vector<string> letterCombinations(string digits) {
-        vector<string> ans;
-        string output="";
-        generatecomibnation(ans,0,output,digits);
-        return ans;   
+    swap(arr[right/row][right%row],arr[low/row][low%row]);
+    return right;
+}
+void quicksort(vector<vector<int>>& arr,int low,int high,int row){
+    if(low<high){
+        int pindex=pairtion(arr,low,high,row);
+        quicksort(arr,low,pindex-1,row);
+        quicksort(arr,pindex+1,high,row);
     }
-};
-int main(){
-    string digits;
-    cin>>digits;
-    Solution s1;
-    vector<string> ans=s1.letterCombinations(digits);
-    for(auto itr:ans){
-        cout<<itr<<" ";
+}
+void print(vector<vector<int>> vec){
+    for(auto vctr:vec){
+        for(auto itr:vctr){
+            cout<<itr<<" ";
+        }
         cout<<endl;
     }
+}
+int main(){
+    int n;
+    cin>>n;
+    vector<vector<int>> vec(n,vector<int> (n,0));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>vec[i][j];
+        }
+    }
+    quicksort(vec,0,n*n-1,n);
+    print(vec);
     return 0;
 }
