@@ -1,44 +1,39 @@
 #include<bits/stdc++.h>
 using namespace std;
-int pairtion(vector<vector<int>>& arr,int low,int high,int row){
-    int pivot=arr[low/row][low%row];
-    int left=low;
-    int right=high;
-    while(left<right){
-        while(arr[left/row][left%row]<=pivot && left<high) left++;
-        while(arr[right/row][right%row]>pivot && right>low) right--;
-        if(left<right){
-            swap(arr[left/row][left%row],arr[right/row][right%row]);
-        } 
+void solve(set<vector<int>>& ans,vector<int>& orignal,long long k,long long sum,int index,vector<int>& subset){
+    if(sum>k) return;
+    if(index==orignal.size()){
+        if(sum==k){
+            for(auto itr:subset) cout<<itr<<" "
+            sort(subset.begin(),subset.end());
+            ans.insert(subset);
+        }
+        return;
     }
-    swap(arr[right/row][right%row],arr[low/row][low%row]);
-    return right;
+    //take
+    subset.push_back(orignal[index]);
+    sum+=orignal[index];
+    solve(ans,orignal,k,sum,index+1,subset);
+    //not take
+    subset.pop_back();
+    sum-=orignal[index];
+    solve(ans,orignal,k,sum,index+1,subset);
 }
-void quicksort(vector<vector<int>>& arr,int low,int high,int row){
-    if(low<high){
-        int pindex=pairtion(arr,low,high,row);
-        quicksort(arr,low,pindex-1,row);
-        quicksort(arr,pindex+1,high,row);
-    }
+vector<vector<int>> subarraysWithSumK(vector<int> a, long long k) {
+    set<vector<int>> ans;
+    vector<int> subset;
+    solve(ans,a,k,0,0,subset);
+    vector<vector<int>> final(ans.begin(),ans.end());
+    return final;
 }
-void print(vector<vector<int>> vec){
-    for(auto vctr:vec){
+
+int main(){
+    vector<int> ans={1 ,2, 3, 1, 1, 1};
+    for(auto vctr:subarraysWithSumK(ans,3)){
         for(auto itr:vctr){
             cout<<itr<<" ";
         }
         cout<<endl;
     }
-}
-int main(){
-    int n;
-    cin>>n;
-    vector<vector<int>> vec(n,vector<int> (n,0));
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin>>vec[i][j];
-        }
-    }
-    quicksort(vec,0,n*n-1,n);
-    print(vec);
     return 0;
 }
