@@ -1,19 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-void reverse(string& str){
-    stack<char> st;
-    for(auto itr:str){
-        st.push(itr);
-    }
-    for(auto itr=str.begin();itr!=str.end();itr++){
-        *itr=st.top();
-        st.pop();
-    }
-}
+class simple{
+    public:
+        int a=4;
+        int b=5;
+};
 int main(){
-    string str;
-    getline(cin,str);
-    reverse(str);
-    cout<<str<<endl;
-    return 0;
+    simple sv;
+    cout<<sv.a<<endl;
 }

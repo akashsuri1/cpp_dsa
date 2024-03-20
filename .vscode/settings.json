@@ -4,7 +4,8 @@
         "iostream": "cpp",
         "array": "cpp",
         "vector": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
