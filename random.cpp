@@ -1,11 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
-class simple{
+class Node{
     public:
-        int a=4;
-        int b=5;
+        int data;
+        Node* left;
+        Node* right;
+        Node(int data){
+            this->data=data;
+            left=nullptr;
+            right=nullptr;
+        }
 };
+void print(Node* root){
+    if(root==nullptr){
+        return;
+    }
+    print(root->left);
+    cout<<root->data<<endl;
+    print(root->right);
+}
 int main(){
-    simple sv;
-    cout<<sv.a<<endl;
+
+    Node* root=new Node(10);
+    root->right=new Node(30);
+    root->left=new Node(20);
+    print(root);
+    return 0;
 }
