@@ -5,7 +5,9 @@
         "array": "cpp",
         "vector": "cpp",
         "set": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "xstring": "cpp",
+        "queue": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
